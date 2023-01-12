@@ -1,0 +1,93 @@
+body{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+   
+    grid-template-areas: "h h" "m a" "f f";
+}
+header{
+    grid-area: h;
+    display: flex;
+    width: 100%;
+    
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(76, 75, 75);
+}
+hr{
+    color: black;
+}
+aside{
+    grid-area:a ;
+    background-color: aqua;
+    width: 100%;
+    margin-top: 20px;
+}
+main{
+    background-color: aquamarine;
+    grid-area: m;
+    flex: 1;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+footer{
+    grid-area: f;
+}
+#btnadd{
+    background-color: transparent;
+    color: black;
+    border-color: transparent;
+    margin-left: auto;
+}
+.modal-corpo{
+    display: inline-block;
+    padding: 10px;
+}
+#nomeart{
+    width: 100%;
+    margin-top: 6px;
+}
+#nomealb{
+    width: 100%;
+    margin-top: 6px;
+}
+
+#estilo{
+    margin-top: 6px;
+}
+#tipo{
+    margin-top: 6px;
+}
+#data{
+    margin-top: 6px;
+}
+.boxart{
+    margin-top: 10px;
+
+}
+.boxalbm{
+    margin-top: 20px;
+}
+.boxdata{
+    margin-top: 20px;
+}
+.boxestilo{
+    margin-top: 20px;
+}
+.boxspr{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.card-img-top{
+    width: 100px;
+    height: 200px;
+}
+
+/*  ASIDE CONTEUDO */
+
+.titflt{
+    text-align: center;
+}
+.inpflt{
+    display: inline-block;
+}
