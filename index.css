@@ -1,44 +1,51 @@
 body{
+    background-color: rgb(43, 42, 42) !important;
     padding: 20px;
     display: grid;
-    grid-template-columns: 3fr 1fr;
-   
-    grid-template-areas: "h h" "m a" "f f";
+    grid-template-columns: 3fr 0.5fr;
+    grid-template-areas: "h h" "m a" ;
 }
 header{
     grid-area: h;
     display: flex;
     width: 100%;
-    
     border-bottom-width: 2px;
     border-bottom-style: solid;
-    border-bottom-color: rgb(76, 75, 75);
+    border-bottom-color: blueviolet;
+}
+.titulo,h3{
+    color: aliceblue;
 }
 hr{
     color: black;
 }
 aside{
     grid-area:a ;
-    background-color: aqua;
     width: 100%;
     margin-top: 20px;
+    border-left-width: 2px;
+    border-left-color:blueviolet ;
+    border-left-style: solid;
+    padding: 15px;
+
 }
 main{
-    background-color: aquamarine;
     grid-area: m;
     flex: 1;
     margin-right: 20px;
     margin-top: 20px;
+    display: inline-block;
 }
 footer{
     grid-area: f;
 }
 #btnadd{
     background-color: transparent;
-    color: black;
+    color: aliceblue;
     border-color: transparent;
     margin-left: auto;
 }
+/*--------------- modal -------------- */
 .modal-corpo{
     display: inline-block;
     padding: 10px;
@@ -78,16 +85,46 @@ footer{
     margin-top: 20px;
     margin-bottom: 10px;
 }
+.url-album{
+    margin-top: 20px;
+
+}
+/* ------------------- main ------------------ */
 .card-img-top{
-    width: 100px;
+    width: 200px;
     height: 200px;
 }
-
-/*  ASIDE CONTEUDO */
-
-.titflt{
+.card-body{
     text-align: center;
 }
-.inpflt{
+
+/* ----------------- ASIDE CONTEUDO ------------ */
+.filtro_suportes,h3{
+    color: aliceblue;
+}
+.filtros_genero,h3{
+    color: aliceblue;
+}
+#genero{
+    /* text-align: center; */
+    border-bottom-width: 2px;
+    border-bottom-color: blueviolet;
+    border-bottom-style: solid;
+}
+#inpflt{
     display: inline-block;
+}
+.filtros{
+    margin-top: 30px;
+}
+.filtros-suporte{
+    margin-top:20px;
+}
+#suportes{
+    border-bottom-width: 2px;
+    border-bottom-color: blueviolet;
+    border-bottom-style: solid;
+}
+.filtro_suportes{
+    margin-top: 30px;
 }

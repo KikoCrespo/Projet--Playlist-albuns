@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./index.css">
 
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
+    <script src="./index.js" defer></script>
     <title>Album List</title>
 </head>
 <body>
@@ -25,146 +26,160 @@
         </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
+           
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <form class="modal-content" id="form-album">
 
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">ALBUM</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">ALBUM</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+
+                      <div class="modal-corpo">
+                        <div class="boxart">
+                          <label for="nomeart">Nome do Artista / Banda: </label>
+                          <input id="nomeart" type="text" placeholder="Nome da Banda/Artista">
+                        </div>
+                        
+                        <div class="boxalbm">
+                          <label for="nomealb" >Nome do Album: </label>
+                          <input id="nomealb" type="text" placeholder="Nome do album"> 
+                        </div>
+
+                        <div class="boxdata">
+                          <label for="data">Data de Lançamento: </label>
+                          <input type="date" name="data" id="data" required>
+                        </div>
+
+                        <div class="url-album">
+                          <label for="data">URL: </label>
+                          <input type="text" name="url" id="urlalbum" required>
+                        </div>
+
+                        <div class="boxestilo">
+                          <label for="estilo">Estilo: </label>
+                          <select id="estilo" required>
+                            <option value=""></option>
+                            <option value="Rock">Rock</option>
+                            <option value="Indie">Indie</option>
+                            <option value="POP">POP</option>
+                            <option value="Reggae">Reggae</option>
+                            <option value="Jazz">Jazz</option>
+                            <option value="HIP-HOP/RAP">HIP-HOP/RAP</option>
+                          </select>
+                        </div>
+                          
+                        <div class="boxspr">
+                          <label for="tipo">SUPORTE: </label>
+
+                          <select id="tipo" required>
+                            <option value=""></option>
+                            <option value="Vinil">Vinil</option>
+                            <option value="CD">CD</option>
+                            <option value="K7">K7</option>
+                            <option value="Digital">Digital</option>
+                          </select>
+                        </div>
+
+                      </div>
+
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <input type="submit" class="btn btn-primary" value="Guardar" >                    
+                      </div>
+
+                    </form>
                   </div>
-
-                  <div class="modal-corpo">
-                    <div class="boxart">
-                      <label for="nomeart">Nome do Artista / Banda: </label>
-                      <input id="nomeart" type="text" placeholder="Nome da Banda/Artista">
-                    </div>
-                    
-                    <div class="boxalbm">
-                      <label for="nomealb" >Nome do Album: </label>
-                      <input id="nomealb" type="text" placeholder="Nome do album"> 
-                    </div>
-
-                    <div class="boxdata">
-                      <label for="data">Data de Lançamento: </label>
-                      <input type="date" name="data" id="data" required>
-                    </div>
-
-                    <div class="boxestilo">
-                      <label for="estilo">Estilo: </label>
-                      <select id="estilo" required>
-                        <option value=""></option>
-                        <option value="Rock">Rock</option>
-                        <option value="Indie">Indie</option>
-                        <option value="POP">POP</option>
-                        <option value="Reggae">Reggae</option>
-                        <option value="Jazz">Jazz</option>
-                        <option value="HIP-HOP/RAP">HIP-HOP/RAP</option>
-                      </select>
-                    </div>
-                      
-                    <div class="boxspr">
-                      <label for="tipo">SUPORTE: </label>
-
-                      <select id="tipo" required>
-                        <option value=""></option>
-                        <option value="Vinil">Vinil</option>
-                        <option value="CD">CD</option>
-                        <option value="K7">K7</option>
-                        <option value="Digital">Digital</option>
-                      </select>
-                    </div>
-
-                  </div>
-
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <input type="submit" class="btn btn-primary" value="Guardar" >
-                  
-                  </div>
-
                 </div>
-              </div>
-            </div>
-
+           
     </header>
    
     <main>
-   
-           <!--           CARD         -->
-
-           <div class="row row-cols-1 row-cols-md-3 g-4">
-
-            <div class="col">
-              <div class="card">
-                <img src="./wallalbum.webp" class="card-img-top" id="urlimg" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">MIXTAKES</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
+                      <!--           CARD         -->
+              <div id="album" class="row row-cols-1 row-cols-md-3 g-4">
+               <!--    <div class="col">
+                    <div class="card">
+                      <img src="./wallalbum.webp" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h3 class="card-title">Titulo Album</h3>
+                        <div>
+                          <h6>Artista</h6>
+                        </div>
+                        <a href="#" class="btn btn-primary" style="background-color: blueviolet; border: black;">Ver +</a>
+                      </div>
+                    </div>
+                  </div> -->
               </div>
-            </div>
-
-            <div class="col">
-              <div class="card">
-                <img src="./wallalbum.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card">
-                <img src="./wallalbum.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card">
-                <img src="./wallalbum.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
 
     </main>
-      <aside>
-        <div class="titflt" >
-            <h3>Filtros</h3>
+
+    <aside>
+        <div class="filtros_genero">
+              <div class="" id="genero" >
+                  <h3>Gênero</h3>
+              </div>
+              <div id="inpfilt">
+                      <div class="filtros" id="in_rock">
+                        <input type="checkbox" class="inputs" name="inp1" id="inp1">
+                        <label for="">ROCK</label>
+                      </div>
+
+                      <div class="filtros">
+                        <input type="checkbox" class="inputs" name="inp2" id="inp2">
+                        <label for="">POP</label>
+                      </div>
+
+                      <div class="filtros">
+                        <input type="checkbox" class="inputs" name="inp3" id="inp3">
+                        <label for="">JAZZ</label>
+                      </div>
+
+                      <div class="filtros">
+                        <input type="checkbox" class="inputs" name="inp4" id="inp4">
+                        <label for="">INDIE</label>
+                      </div>
+
+                      <div class="filtros">
+                        <input type="checkbox" class="inputs" name="inp5" id="inp5">
+                        <label for="">REGGAE</label>
+                      </div>
+
+                      <div class="filtros">
+                        <input type="checkbox" class="inputs" name="inp5" id="inp6">
+                        <label for="">HIP-HOP / RAP</label>
+                      </div>       
+              </div>
         </div>
-        <div class="inpfilt">
-          <div><input type="radio" name="inp1" id="inp1">
-            <label for="">Input 1</label>
-          </div>
 
-          <div><input type="radio" name="inp2" id="inp2">
-            <label for="">Input 1</label>
-          </div>
+        <div class="filtro_suportes">
+                <div class="titulo-suporte" id="suportes" >
+                    <h3>Suporte</h3>
+                </div>
+                <div id="inpsuportes">
+                        <div class="filtros-suporte" id="cd">
+                          <input type="checkbox" class="inputs" name="inpcd" id="inpcd">
+                          <label for="">CD</label>
+                        </div>
 
-          <div><input type="radio" name="inp3" id="inp3">
-            <label for="">Input 1</label>
-          </div>
+                        <div class="filtros-suporte" >
+                          <input type="checkbox" class="inputs" name="inpvin" id="inpvin">
+                          <label for="">Vinil</label>
+                        </div>
 
-          <div><input type="radio" name="inp4" id="inp4">
-            <label for="">Input 1</label>
-          </div>
+                        <div class="filtros-suporte">
+                          <input type="checkbox" class="inputs" name="inpk7" id="inpk7">
+                          <label for="">K7</label>
+                        </div>
 
-          <div><input type="radio" name="inp5" id="inp5">
-            <label for="">Input 1</label>
-          </div>
-          
+                        <div class="filtros-suporte">
+                          <input type="checkbox" class="inputs" name="inpdig" id="inpdig">
+                          <label for="">Digital</label>
+                        </div>
+                </div>      
         </div>
-      </aside>
-      <footer></footer>
+                  
+    </aside>
+     
 </body>
 </html>
